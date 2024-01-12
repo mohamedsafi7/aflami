@@ -46,7 +46,6 @@ const Signup = () => {
           })
           .catch(error => {
             console.error('Error during signin:', error);
-            alert('Error during signin');
           });
     };
 

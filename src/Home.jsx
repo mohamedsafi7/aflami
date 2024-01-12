@@ -142,7 +142,14 @@ const Home = () => {
         
       ) : (
         <div className="empty">
-          <h2>No movies found</h2>
+          <div className="spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       )}
     </div>

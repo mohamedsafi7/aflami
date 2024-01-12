@@ -8,7 +8,7 @@ import Signin from './Signin.jsx';
 import Watchlist from './Watchlist';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import New from './New.jsx';
 const App = () => {
   const [watchlist, setWatchlist] = useState([]);
 
@@ -44,6 +44,7 @@ const App = () => {
         <Route path="/Watchlist" element={<Watchlist watchlist={watchlist} removeFromWatchlist={removeFromWatchlist} />}/>
         <Route path="/" element={<Signup />} />
         <Route path="/Signin" element={<Signin />} />
+        <Route path="/New" element={<New />} />
 
       </Routes>
     </Router>

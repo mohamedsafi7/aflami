@@ -83,7 +83,14 @@ const MovieDetails = ({ addToWatchlist }) => {
           </div>
         </div>
       ) : (
-        <div>Loading...</div>
+        <div className="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       )}
     </div>
   );
