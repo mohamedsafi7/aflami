@@ -1,0 +1,45 @@
+/* Watchlist.css */
+
+.mywatch {
+    display: flex;
+    flex-direction: grid;
+    align-items: center;
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+
+  .watchlist {
+    width: 100%;
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    margin-top: 50px; /* Adjust margin as needed */
+  }
+  .watchlist img {
+    width: 60px; /* Adjust image size as needed */
+    height: 75px; /* Adjust image size as needed */
+    object-fit: cover;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .watchlist th {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .watchlist td {
+    padding: 10px;
+  }
+  
+  .delete-btn {
+    cursor: pointer;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+  }  
+  .watchlist .delete-btn:hover {
+    background-color: #d32f2f;
+  }

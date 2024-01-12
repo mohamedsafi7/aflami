@@ -1,0 +1,87 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  
+    
+    .cardetails {
+      display: flex;
+      height: 60vh; 
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30);
+    }
+    
+    .cardetails .cardimage img{
+      width: 60vh; /*size of card detail*/
+      height: 63vh;
+      margin-left: 15px;
+    }
+    
+    .cardcontent {
+      width: 150vh; /*size of card detail*/
+      height: 60vh;
+      background: #FFF;
+      padding: 1rem;
+    }
+    
+    .cardtitle {
+      margin-top: 2rem;
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    }
+    
+    .info {
+      margin-top: 0.5rem;
+      text-align: justify;
+      font-size: 1.49rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #424141;
+    }
+    
+    .cardconfig {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .cardconfig .rating {
+      font-size: 2rem;
+    }
+    
+    .stars {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .stars .ratescale {
+      width: 24px;
+      height: 24px;
+      padding: 2px;
+      display: inline-block;
+    }
+    
+    .watchlist {
+      margin-top: 2rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+  .cart{
+      background: #F2994A;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
+    }
+    

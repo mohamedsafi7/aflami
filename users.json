@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "name": "deewd",
+      "email": "deewd@gmail.com",
+      "password": "deewd",
+      "id": "1e36"
+    },
+    {
+      "email": "user1@gmail.com",
+      "password": "1211",
+      "id": "zhBWy1B"
+    },
+    {
+      "id": "0e5a",
+      "name": "mohamed",
+      "email": "mohamed.texting@gmail.com",
+      "password": "qazx"
+    }
+  ]
+}

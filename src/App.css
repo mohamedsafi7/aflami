@@ -1,0 +1,210 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.home {
+  width: 80%; /* Adjust as needed */
+  margin: 0px auto 20px; /* Add padding to the top for fixed header */
+  padding: 80px;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; /* Update the background color */
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+.header h1 {
+  margin: 0;
+  
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  padding: 10px;
+  margin-right: 5px; /* Adjust the margin-right value to move it to the left */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-icon {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column; /* Ensure type and genre buttons are stacked vertically */
+  align-items: center;
+  margin: 20px 0;
+}
+.type-genre-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Add margin to separate from the genre list */
+}
+
+.filter {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter:hover,
+.filter.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.genre-btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.genre-btn:hover,
+.genre-btn.selected {
+  background: #FF416C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 200px;
+}
+.container > :nth-child(-n + 4) {
+  margin-bottom: 100px; /* Adjust the margin as needed */
+}
+.empty {
+  text-align: center;
+  margin-top: 50px;
+  color: #555;
+  font-size: 20px;
+}
+
+/* MovieCard.css */
+
+.movie {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: -100px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+}
+
+.movie div {
+  padding: 10px;
+  
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+
+.movie span {
+  font-size: 14px;
+  color: #555;
+}
+
+.movie h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #36D1DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #0575E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+.details {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  background: #e0e0e0;
+  box-shadow:  -37px 37px 85px #a1a1a1,
+               37px -37px 85px #ffffff;
+  margin-bottom: 10px;
+}
+
+.details p {
+  font-size: 16px;
+  color: #333;
+  margin-left:50px;
+}
