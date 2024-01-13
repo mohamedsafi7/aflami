@@ -136,7 +136,7 @@ const Home = () => {
       {filterData()?.length > 0 ? (
         <div className="container">
           {filterData().map((item) => (
-            <MovieCard key={item.id} id={item.id} name={item.name} image={item.image} />
+            <MovieCard key={item.id} id={item.id} genre={item.genre} name={item.name} image={item.image} />
           ))}
         </div>
         

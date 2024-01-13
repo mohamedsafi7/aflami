@@ -1,113 +1,83 @@
+// New.js
 import React, { useState } from 'react';
 import Axios from 'axios';
-import { NavLink } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './form.css';
 
 const New = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    genre: '',
-    description: '',
-    type: '',
-    image: null,
-    id: '',
+  const url = "http://localhost:3001/movies";
+  const [data, setData] = useState({
+    name: "",
+    genre: "",
+    description: "",
+    type: "",
+    image: ""
   });
 
   const ToastMessage = () => {
-    toast.error('Error Informations !', {
+    toast.error("Error Informations !", {
       position: toast.POSITION.BOTTOM_CENTER,
     });
   };
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedImage(file);
-    handle(e); // Call the shared handle function to update the form data
-  };
-
+  const back = () =>{
+    window.location.href = '/Home';
+  }
   const handle = (e) => {
     const { id, value } = e.target;
-    setFormData((prevData) => ({
+    setData((prevData) => ({
       ...prevData,
-      [id]: id === 'image' ? selectedImage : value,
+      [id]: value
     }));
   };
 
-  const hsubmit = async (e) => {
+  const hsubmit = (e) => {
     e.preventDefault();
 
-    const newFormData = new FormData();
-    newFormData.append('name', formData.name);
-    newFormData.append('genre', formData.genre);
-    newFormData.append('description', formData.description);
-    newFormData.append('type', formData.type);
-    newFormData.append('image', formData.image);
-    newFormData.append('id', formData.id);
-
-    try {
-      const response = await Axios.post('http://localhost:3001/movies', newFormData);
-
-      if (response.data && response.data.length > 0) {
-        window.location.href = '/Home';
-      } else {
-        window.location.href = '/Home';
-      }
-    } catch (error) {
-      console.error('Error during completing the form:', error);
-      ToastMessage(); // Display a toast message in case of an error
-    }
+    Axios.post(url, {
+      name: data.name,
+      genre: data.genre,
+      description: data.description,
+      type: data.type,
+      image: data.image
+    })
+      .then(res => {
+        if (res.data && res.data.id) {
+          window.location.href = '/Home';
+        } else {
+          console.log('Error during form submission:', res.data);
+          alert('Error during form submission');
+        }
+      })
+      .catch(error => {
+        console.error('Error during completing the form:', error);
+        alert('Error during completing the form');
+      });
   };
 
   return (
     <div className='form-box'>
       <form onSubmit={hsubmit} className='newform'>
-        <span className='title'>Add new movie or series</span>
+        <span className="title">Add new movie or series</span>
         <div className='newform-cotainer'>
-          <input
-            className='newinput'
-            id='name'
-            placeholder='name'
-            value={formData.name}
-            type='text'
-            onChange={(e) => {
-              handle(e);
-            }}
-          />
-          <select id='genre' onChange={(e) => handle(e)}>
-            <option value='Drama'>Drama</option>
-            <option value='Action'>Action</option>
-            <option value='Crime'>Crime</option>
-            <option value='Sci-Fi'>Sci-Fi</option>
+          <input className='newinput' id="name" placeholder='name' value={data.name} type="text" onChange={(e) => { handle(e) }} />
+          <select className='select' id="genre" onChange={(e) => { handle(e) }}>
+            <option value="" disabled>Select Genre</option>
+            <option value="Drama">Drama</option>
+            <option value="Action">Action</option>
+            <option value="Crime">Crime</option>
+            <option value="Sci-Fi">Sci-Fi</option>
           </select>
-          <select id='type' onChange={(e) => handle(e)}>
-            <option value='Movie'>Movie</option>
-            <option value='Series'>Series</option>
+          <select className='select' id="type" onChange={(e) => { handle(e) }}>
+            <option value="" disabled>Select Type</option>
+            <option value="Movie">Movie</option>
+            <option value="Series">Series</option>
           </select>
-          <input
-            className='newinput'
-            id='description'
-            placeholder='description'
-            value={formData.description}
-            type='description'
-            onChange={(e) => {
-              handle(e);
-            }}
-          />
-          <input
-            className='newinput'
-            id='image'
-            placeholder='image'
-            type='file'
-            onChange={(e) => {
-              handleImageChange(e);
-            }}
-          />
+          <input className='newinput' id="description" placeholder='description' value={data.description} type="description" onChange={(e) => { handle(e) }} />
+        
         </div>
-        <button type='submit' onClick={ToastMessage}>
-          Add
-        </button>
+        <button className='btnew' type='submit' onClick={ToastMessage}>Add</button>
+        <button className='btnew' onClick={back}>Cancel</button>
         <ToastContainer />
       </form>
     </div>

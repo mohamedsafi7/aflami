@@ -15,6 +15,10 @@
     overflow: hidden;
     border-radius: 16px;
     color: #010101;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .form {

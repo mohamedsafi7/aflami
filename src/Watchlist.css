@@ -1,45 +1,72 @@
-/* Watchlist.css */
+
 
 .mywatch {
-    display: flex;
-    flex-direction: grid;
-    align-items: center;
-    margin-top: 20px; /* Adjust as needed */
-  }
-  
+  position: absolute;
+  top: 20%; 
+  left:35%;
+ 
+}
 
-  .watchlist {
-    width: 100%;
-    margin: 0 auto; /* Center the table */
-    border-collapse: collapse;
-    margin-top: 50px; /* Adjust margin as needed */
-  }
-  .watchlist img {
-    width: 60px; /* Adjust image size as needed */
-    height: 75px; /* Adjust image size as needed */
-    object-fit: cover;
-    display: inline-block;
-    margin-right: 10px;
-  }
-  .watchlist th {
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
+.watchlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.watchlist-table th,
+.watchlist-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.watchlist-table th {
+  font-weight: bold;
+}
+
+.movie-details {
+  display: flex;
+  align-items: center;
+}
+
+.movie-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.movie-name {
+  font-weight: bold;
+}
+
+.movie-actions button {
+  background-color: red;
+  color: white; 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  cursor: pointer; 
+}
+
+.seven h1 {
+  text-align: center;
+      font-size:30px; font-weight:300; 
+      color:#222; letter-spacing:1px;
+      text-transform: uppercase;
+      font-family: "Raleway", sans-serif;
+      font-weight: 300;
+
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      grid-template-rows: 27px 0;
+      grid-gap: 20px;
+      align-items: center;
   }
   
-  .watchlist td {
-    padding: 10px;
-  }
-  
-  .delete-btn {
-    cursor: pointer;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-  }  
-  .watchlist .delete-btn:hover {
-    background-color: #d32f2f;
+  .seven h1:after,.seven h1:before {
+      content: "````";
+      display: block;
+      border-bottom: 5px solid #000000;
+      border-top: 5px solid #c50000;
+      height: 5px;
+       background-color:#f8f8f8;
   }

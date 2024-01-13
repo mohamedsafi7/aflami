@@ -9,11 +9,11 @@
       "type": "movie"
     },
     {
-      "id": "2",
-      "name": "The Matrix",
-      "genre": "Sci-Fi",
-      "description": "Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
-      "image": "pics/matrix.jpg",
+      "id": "19",
+      "name": "The Dark Knight Rises",
+      "genre": "Action",
+      "description": "It has been eight years since Batman (Christian Bale), in collusion with Commissioner Gordon (Gary Oldman), vanished into the night. Assuming responsibility for the death of Harvey Dent, Batman sacrificed everything for what he and Gordon hoped would be the greater good. However, the arrival of a cunning cat burglar (Anne Hathaway) and a merciless terrorist named Bane (Tom Hardy) force Batman out of exile and into a battle he may not be able to win.",
+      "image": "pics/dn.jpg",
       "type": "movie"
     },
     {
@@ -38,6 +38,14 @@
       "genre": "Sci-Fi",
       "description": "After a painful breakup, Clementine (Kate Winslet) undergoes a procedure to erase memories of her former boyfriend Joel (Jim Carrey) from her mind. When Joel discovers that Clementine is going to extremes to forget their relationship, he undergoes the same procedure and slowly begins to forget the woman that he loved. Directed by former music video director Michel Gondry, the visually arresting film explores the intricacy of relationships and the pain of loss.",
       "image": "pics/eternal.jpg",
+      "type": "movie"
+    },
+    {
+      "id": "2",
+      "name": "The Matrix",
+      "genre": "Sci-Fi",
+      "description": "Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
+      "image": "pics/matrix.jpg",
       "type": "movie"
     },
     {
@@ -145,20 +153,76 @@
       "type": "movie"
     },
     {
-      "id": "19",
-      "name": "The Dark Knight Rises",
-      "genre": "Action",
-      "description": "It has been eight years since Batman (Christian Bale), in collusion with Commissioner Gordon (Gary Oldman), vanished into the night. Assuming responsibility for the death of Harvey Dent, Batman sacrificed everything for what he and Gordon hoped would be the greater good. However, the arrival of a cunning cat burglar (Anne Hathaway) and a merciless terrorist named Bane (Tom Hardy) force Batman out of exile and into a battle he may not be able to win.",
-      "image": "pics/dn.jpg",
-      "type": "movie"
-    },
-    {
       "id": "20",
       "name": "John Wick",
       "genre": "Action",
       "description": "Legendary assassin John Wick (Keanu Reeves) retired from his violent career after marrying the love of his life. Her sudden death leaves John in deep mourning. When sadistic mobster Iosef Tarasov (Alfie Allen) and his thugs steal John's prized car and kill the puppy that was a last gift from his wife, John unleashes the remorseless killing machine within and seeks vengeance. Meanwhile, Iosef's father (Michael Nyqvist) -- John's former colleague -- puts a huge bounty on John's head.",
       "image": "pics/jw.jpg",
       "type": "movie"
+    },
+    {
+      "id": "0195",
+      "name": "life itself",
+      "genre": "Drama",
+      "description": "real life story",
+      "type": "Movie",
+      "image": ""
+    },
+    {
+      "id": "faec",
+      "name": "",
+      "genre": "",
+      "description": "",
+      "type": "",
+      "image": ""
+    },
+    {
+      "id": "74c6",
+      "name": "",
+      "genre": "",
+      "description": "",
+      "type": "",
+      "image": ""
+    },
+    {
+      "id": "016d",
+      "name": "",
+      "genre": "",
+      "description": "",
+      "type": "",
+      "image": ""
+    },
+    {
+      "id": "26dd",
+      "name": "",
+      "genre": "",
+      "description": "",
+      "type": "",
+      "image": ""
+    },
+    {
+      "id": "8af2",
+      "name": "",
+      "genre": "",
+      "description": "",
+      "type": "",
+      "image": ""
+    },
+    {
+      "id": "5756",
+      "name": "",
+      "genre": "",
+      "description": "",
+      "type": "",
+      "image": ""
+    },
+    {
+      "id": "e57f",
+      "name": "",
+      "genre": "",
+      "description": "",
+      "type": "",
+      "image": ""
     }
   ],
   "tvShow": [

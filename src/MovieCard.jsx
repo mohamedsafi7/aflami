@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 
-const MovieCard = ({ id, image, name }) => {
+const MovieCard = ({ id, image, name , genre}) => {
   return (
     <div className="movie">
       <div>
-        <p>{name}</p>
+        <p>{genre}</p>
       </div>
 
       <div>

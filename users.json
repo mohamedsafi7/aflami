@@ -16,6 +16,12 @@
       "name": "mohamed",
       "email": "mohamed.texting@gmail.com",
       "password": "qazx"
+    },
+    {
+      "id": "8300",
+      "name": "awes",
+      "email": "a@gmail.com",
+      "password": "123"
     }
   ]
 }

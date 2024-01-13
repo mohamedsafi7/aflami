@@ -56,7 +56,7 @@ const Signin = () => {
           <input className='input' id="password" placeholder='password' value={data.password} type="password" onChange={handle} />
         </div>
         <button type='submit' onClick={showToastMessage}> Login</button>
-          <ToastContainer />
+         
       </form>
       <div className="form-section">
         <p>Dont have an account? <NavLink to="/Signup">Sign up</NavLink></p>

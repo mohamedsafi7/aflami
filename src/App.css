@@ -1,4 +1,4 @@
-/* App.css */
+
 
 body {
   margin: 0;
@@ -7,19 +7,25 @@ body {
 }
 
 .home {
-  width: 80%; /* Adjust as needed */
-  margin: 0px auto 20px; /* Add padding to the top for fixed header */
+  width: 80%; 
+  margin: 0px auto 20px; 
   padding: 80px;
 }
-
-
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #333; /* Update the background color */
-  color: #fff;
+  /* background: #000428;  
+background: -webkit-linear-gradient(to left, #004e92, #000428);  
+background: linear-gradient(to left, #004e92, #000428);  */
+
+ background: #00c6ff;  
+background: -webkit-linear-gradient(to left, #0072ff, #00c6ff);  
+background: linear-gradient(to left, #0072ff, #00c6ff); 
+
+  
+  color: #fff; 
   padding: 10px 0;
   text-align: center;
   z-index: 1000;
@@ -27,13 +33,21 @@ body {
 
 .header h1 {
   margin: 0;
-  
+  background-image: linear-gradient(60deg, #0072ff, #7821d5);
+  background-clip: text;
+  color: transparent;
 }
 
 .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.top a h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px; 
 }
 
 .search {
@@ -43,7 +57,7 @@ body {
 
 .search input {
   padding: 10px;
-  margin-right: 5px; /* Adjust the margin-right value to move it to the left */
+  margin-right: 5px; 
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -56,14 +70,18 @@ body {
 
 .filters {
   display: flex;
-  flex-direction: column; /* Ensure type and genre buttons are stacked vertically */
+  flex-direction: column; 
   align-items: center;
   margin: 20px 0;
+  position: absolute;
+  top: 10%; 
+  left: 35%;
+
 }
 .type-genre-container {
   display: flex;
   align-items: center;
-  margin-bottom: 10px; /* Add margin to separate from the genre list */
+  margin-bottom: 10px; 
 }
 
 .filter {
@@ -102,9 +120,9 @@ ul {
 
 .genre-btn:hover,
 .genre-btn.selected {
-  background: #FF416C;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #FF416C;  
+  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  
+  background: linear-gradient(to right, #FF4B2B, #FF416C); 
   
   color: #fff;
 }
@@ -113,16 +131,20 @@ ul {
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 200px;
+  margin-top: 250px;
 }
 .container > :nth-child(-n + 4) {
-  margin-bottom: 100px; /* Adjust the margin as needed */
+  margin-bottom: 100px; 
 }
 .empty {
   text-align: center;
   margin-top: 50px;
   color: #555;
   font-size: 20px;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 /* MovieCard.css */
@@ -170,9 +192,9 @@ ul {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background: #36D1DC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #36D1DC;  
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  
+  background: linear-gradient(to right, #5B86E5, #36D1DC); 
   
   color: #fff;
   border: none;
@@ -182,9 +204,9 @@ ul {
 }
 
 .btn:hover {
-  background: #0575E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0575E6;  
+  background: -webkit-linear-gradient(to right, #021B79, #0575E6);  
+  background: linear-gradient(to right, #021B79, #0575E6); 
   
 }
 .details {

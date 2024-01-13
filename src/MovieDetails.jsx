@@ -63,6 +63,7 @@ const MovieDetails = ({ addToWatchlist }) => {
           </div>
           <div className='cardcontent'>
             <p className='cardtitle'>{movieDetails.name}</p>
+            <p className='info'>{movieDetails.genre}</p>
             <p className='info'>{movieDetails.description}</p>
             <div className='cardconfig'>
             </div>
