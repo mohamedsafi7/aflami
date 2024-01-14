@@ -7,12 +7,14 @@ import './form.css';
 
 const New = () => {
   const url = "http://localhost:3001/movies";
+  const url1 = "http://localhost:3001/tvShow";
   const [data, setData] = useState({
     name: "",
     genre: "",
     description: "",
     type: "",
-    image: ""
+    image: "",
+    trailer:""
   });
 
   const ToastMessage = () => {
@@ -31,28 +33,34 @@ const New = () => {
     }));
   };
 
-  const hsubmit = (e) => {
-    e.preventDefault();
-
-    Axios.post(url, {
+  const postData = (postUrl) => {
+    Axios.post(postUrl, {
       name: data.name,
       genre: data.genre,
       description: data.description,
       type: data.type,
-      image: data.image
+      image: data.image,
+      trailer: data.trailer
     })
       .then(res => {
         if (res.data && res.data.id) {
           window.location.href = '/Home';
-        } else {
-          console.log('Error during form submission:', res.data);
-          alert('Error during form submission');
         }
       })
       .catch(error => {
         console.error('Error during completing the form:', error);
         alert('Error during completing the form');
       });
+  };
+
+  const hsubmit = (e) => {
+    e.preventDefault();
+
+    // Post to the first URL
+    postData(url);
+
+    // Post to the second URL
+    postData(url1);
   };
 
   return (
@@ -63,22 +71,23 @@ const New = () => {
           <input className='newinput' id="name" placeholder='name' value={data.name} type="text" onChange={(e) => { handle(e) }} />
           <select className='select' id="genre" onChange={(e) => { handle(e) }}>
             <option value="" disabled>Select Genre</option>
-            <option value="Drama">Drama</option>
-            <option value="Action">Action</option>
-            <option value="Crime">Crime</option>
+            <option id="genre" onChange={(e) => { handle(e) }} value="Drama">Drama</option>
+            <option id="genre" onChange={(e) => { handle(e) }} value="Action">Action</option>
+            <option id="genre" onChange={(e) => { handle(e) }} value="Crime">Crime</option>
             <option value="Sci-Fi">Sci-Fi</option>
           </select>
           <select className='select' id="type" onChange={(e) => { handle(e) }}>
             <option value="" disabled>Select Type</option>
-            <option value="Movie">Movie</option>
-            <option value="Series">Series</option>
+            <option id="type" onChange={(e) => { handle(e) }} value="movies">Movie</option>
+            <option id="type" onChange={(e) => { handle(e) }} value="tvShow">tvShow</option>
           </select>
           <input className='newinput' id="description" placeholder='description' value={data.description} type="description" onChange={(e) => { handle(e) }} />
+          <input className='newinput' id="trailer" placeholder='trailer video' value={data.trailer} type="trailer" onChange={(e) => { handle(e) }} />
         
         </div>
         <button className='btnew' type='submit' onClick={ToastMessage}>Add</button>
         <button className='btnew' onClick={back}>Cancel</button>
-        <ToastContainer />
+        
       </form>
     </div>
   );

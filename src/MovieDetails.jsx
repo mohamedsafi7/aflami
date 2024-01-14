@@ -59,7 +59,7 @@ const MovieDetails = ({ addToWatchlist }) => {
       {movieDetails ? (
         <div className='cardetails'>
           <div className='cardimage'>
-            <img src={`../${movieDetails.image}`} alt={movieDetails.name} />
+          <div dangerouslySetInnerHTML={{ __html: movieDetails.trailer }} />
           </div>
           <div className='cardcontent'>
             <p className='cardtitle'>{movieDetails.name}</p>
@@ -81,6 +81,7 @@ const MovieDetails = ({ addToWatchlist }) => {
                 {buttonText}
               </button>
             </form>
+            
           </div>
         </div>
       ) : (
