@@ -8,12 +8,12 @@ const MovieCard = ({ id, image, name , genre}) => {
       <div>
         <p>{genre}</p>
       </div>
-
+      <Link to={`/MovieDetails/${id}`}>
       <div>
           <img src={`../${image}`} alt={name} />
 
       </div>
-
+      </Link>
       <div>
         <h3>{name}</h3>
 

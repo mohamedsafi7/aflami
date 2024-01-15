@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
-
 import './App.css'; 
 import Signup from './Signup.jsx';
 
@@ -24,7 +23,7 @@ const Header = ({ setSearchTerm }) => {
           <NavLink to="../">
             <h2 className="log"> Login </h2>
           </NavLink>
-          <NavLink to="/New">
+          <NavLink to="/Home/New">
             <h2 className="nw"> New </h2>
           </NavLink>
           <NavLink to="/Watchlist"><h2 className="watchl">  Watchlist </h2></NavLink>

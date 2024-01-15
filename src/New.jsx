@@ -4,36 +4,42 @@ import Axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './form.css';
+import { useNavigate } from 'react-router-dom';
 
 const New = () => {
+  const navigate = useNavigate()
   const url = "http://localhost:3001/movies";
   const url1 = "http://localhost:3001/tvShow";
   const [data, setData] = useState({
     name: "",
     genre: "",
     description: "",
-    type: "",
+    type: "Movie",
     image: "",
     trailer:""
   });
 
   const ToastMessage = () => {
-    toast.error("Error Informations !", {
+    toast.success("Added succesfully", {
       position: toast.POSITION.BOTTOM_CENTER,
     });
   };
   const back = () =>{
-    window.location.href = '/Home';
+    navigate("/Home")
+
   }
   const handle = (e) => {
     const { id, value } = e.target;
+    
     setData((prevData) => ({
       ...prevData,
       [id]: value
     }));
+    console.log(value,id);
   };
 
   const postData = (postUrl) => {
+    console.log(data);
     Axios.post(postUrl, {
       name: data.name,
       genre: data.genre,
@@ -43,24 +49,21 @@ const New = () => {
       trailer: data.trailer
     })
       .then(res => {
-        if (res.data && res.data.id) {
-          window.location.href = '/Home';
-        }
+        navigate("/Home")
       })
-      .catch(error => {
-        console.error('Error during completing the form:', error);
-        alert('Error during completing the form');
-      });
+      // .catch(error => {
+      //   console.error('Error during completing the form:', error);
+      //   alert('Error during completing the form');
+      // });
   };
 
   const hsubmit = (e) => {
     e.preventDefault();
-
-    // Post to the first URL
-    postData(url);
-
-    // Post to the second URL
-    postData(url1);
+    if(data.type == "Movie"){
+      postData(url);
+    }else{
+      postData(url1);
+    }
   };
 
   return (
@@ -78,8 +81,8 @@ const New = () => {
           </select>
           <select className='select' id="type" onChange={(e) => { handle(e) }}>
             <option value="" disabled>Select Type</option>
-            <option id="type" onChange={(e) => { handle(e) }} value="movies">Movie</option>
-            <option id="type" onChange={(e) => { handle(e) }} value="tvShow">tvShow</option>
+            <option id="type" onChange={(e) => { console.log(e.target.value); handle(e) }} value="Movie">Movie</option>
+            <option id="type" onChange={(e) => {console.log(e.target.value); handle(e) }} value="tvShow">tvShow</option>
           </select>
           <input className='newinput' id="description" placeholder='description' value={data.description} type="description" onChange={(e) => { handle(e) }} />
           <input className='newinput' id="trailer" placeholder='trailer video' value={data.trailer} type="trailer" onChange={(e) => { handle(e) }} />
