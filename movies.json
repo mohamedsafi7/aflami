@@ -23,7 +23,7 @@
       "genre": "Sci-Fi",
       "description": "A blade runner Deckard (Harrison Ford) is forced by the police Boss (M. Emmet Walsh) to continue his old job as Replicant Hunter. His assignment: eliminate four escaped Replicants from the colonies who have returned to Earth. Before starting the job, Deckard goes to the Tyrell Corporation and he meets Rachel (Sean Young), a Replicant girl he falls in love with.",
       "image": "pics/BladeRunner.jpg",
-      "trailer": "<iframe src=\"https://www.youtube.com/embed/gCcx85zbxz4?autoplay=1&mute=1\" width=\"500\" height=\"558\" title=\"A YouTube video\" frameborder=\"0\" allowfullscreen></iframe>",
+      "trailer": "<iframe src=\"https://www.youtube.com/embed/gCcx85zbxz4?autoplay=1&mute=1\" width=\"560\" height=\"558\" title=\"A YouTube video\" frameborder=\"0\" allowfullscreen></iframe>",
       "type": "movie"
     },
     {
@@ -168,7 +168,7 @@
       "id": "6572",
       "name": "OppenHeimer",
       "genre": "Drama",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "description": " During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project. Oppenheimer and a team of scientists spend years developing and designing the atomic bomb. Their work comes to fruition on July 16, 1945, as they witness the world's first nuclear explosion, forever changing the course of history.",
       "type": "",
       "image": "",
       "trailer": "<iframe src=\"https://www.youtube.com/embed/uYPbbksJxIg?start=27&autoplay=1&mute=1\" width=\"500\" height=\"558\" title=\"A YouTube video\" frameborder=\"0\" allowfullscreen></iframe>"
@@ -259,7 +259,7 @@
       "id": "548f",
       "name": "Fast and Furious 6",
       "genre": "Action",
-      "description": "race cars",
+      "description": "Since Dom (Vin Diesel) and Brian's (Paul Walker) heist in Rio left them and their crew very rich people, they've scattered across the globe; however, they must still live as fugitives, unable to return home to their families. Meanwhile, Agent Hobbs (Dwayne Johnson) has been tracking a gang of lethally skilled mercenary drivers whose second-in-command is someone Dom knows. Unable to take them down himself, Hobbs asks Dom and his crew for help in exchange for full pardons for everyone.",
       "type": "tvShow",
       "image": "",
       "trailer": "<iframe src=\"https://www.youtube.com/embed/dKi5XoeTN0k?start=27&autoplay=1\" width=\"500\" height=\"558\" title=\"A YouTube video\" frameborder=\"0\" allowfullscreen></iframe>"

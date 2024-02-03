@@ -8,7 +8,11 @@ const MovieDetails = ({ addToWatchlist }) => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [rating, setRating] = useState(0);
+  const [recommandations,setRecommandations] = useState([]);
   const [buttonText, setButtonText] = useState('Add to Watchlist');
+
+  const api_movies= "http://localhost:3001/movies";
+  const api_tvshow= "http://localhost:3001/tvShow";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,12 +36,26 @@ const MovieDetails = ({ addToWatchlist }) => {
       } catch (error) {
         console.error('Error fetching details:', error);
       }
+
     };
     
     
 
     fetchData();
   }, [id]);
+
+  useEffect(()=>{
+    const data= async()=>{
+      const movieResult= await fetch(api_movies);
+      const tvshowResult= await fetch(api_tvshow);
+
+      const movierecommend = await movieResult.json();
+      const tvshowrecommend = await tvshowResult.json();
+
+      setRecommandations([...movierecommend,...tvshowrecommend])
+    };
+    data();
+  },[]);
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -83,7 +101,21 @@ const MovieDetails = ({ addToWatchlist }) => {
             </form>
             
           </div>
+          {data ?(
+          <div>
+            {Recommandations().map((i)=>(
+              <div>
+              <img src={i.image} alt="" />
+              <h3></h3>
+              </div>
+              
+            ))}
+          </div>
+        ):(
+          <div><h1>aucun</h1></div>
+          )}
         </div>
+        
       ) : (
         <div className="spinner">
           <div></div>
@@ -94,6 +126,7 @@ const MovieDetails = ({ addToWatchlist }) => {
           <div></div>
         </div>
       )}
+      
     </div>
   );
 };

@@ -14,7 +14,7 @@ const New = () => {
     name: "",
     genre: "",
     description: "",
-    type: "Movie",
+    type: "movie",
     image: "",
     trailer:""
   });
@@ -38,6 +38,7 @@ const New = () => {
     console.log(value,id);
   };
 
+
   const postData = (postUrl) => {
     console.log(data);
     Axios.post(postUrl, {
@@ -59,7 +60,7 @@ const New = () => {
 
   const hsubmit = (e) => {
     e.preventDefault();
-    if(data.type == "Movie"){
+    if(data.type == "movie"){
       postData(url);
     }else{
       postData(url1);
@@ -81,7 +82,7 @@ const New = () => {
           </select>
           <select className='select' id="type" onChange={(e) => { handle(e) }}>
             <option value="" disabled>Select Type</option>
-            <option id="type" onChange={(e) => { console.log(e.target.value); handle(e) }} value="Movie">Movie</option>
+            <option id="type" onChange={(e) => { console.log(e.target.value); handle(e) }} value="movie">movie</option>
             <option id="type" onChange={(e) => {console.log(e.target.value); handle(e) }} value="tvShow">tvShow</option>
           </select>
           <input className='newinput' id="description" placeholder='description' value={data.description} type="description" onChange={(e) => { handle(e) }} />

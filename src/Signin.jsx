@@ -1,3 +1,4 @@
+import log from './../pics/log.webp';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './center.css';
@@ -35,9 +36,9 @@ const Signin = () => {
     })
       .then(res => {
         // Check if login is correct
-        if (res.data && res.data.length > 0) {
+        if (res.data.email==data.email && res.data.password==data.password ) {
           // If login is successful, manually navigate to home
-          window.location.href = '/Home'; // Assuming your home page route is '/'
+          window.location.href = '/Home'; 
         } 
       })
       .catch(error => {
@@ -47,20 +48,23 @@ const Signin = () => {
 
   return (
     <div className='form-box'>
-
-      <form onSubmit={handleSubmit} className='form'>
-        <span className="title">Sign In</span>
-        <span className="subtitle">Sign in to the account with your email.</span>
-        <div className='form-container'>
-          <input className='input' id="email" placeholder='email' value={data.email} type="email" onChange={handle} />
-          <input className='input' id="password" placeholder='password' value={data.password} type="password" onChange={handle} />
-        </div>
-        <button type='submit' onClick={showToastMessage}> Login</button>
-         
-      </form>
-      <div className="form-section">
-        <p>Dont have an account? <NavLink to="/Signup">Sign up</NavLink></p>
+    <div className='bg'>
+    <img src={log} alt="" />
+    </div>
+    <div className='frm'>
+    <form onSubmit={handleSubmit} className='form'>
+    <span className="title">Sign In</span>
+    <span className="subtitle">Sign in to the account with your email.</span>
+      <div className='form-container'>
+        <input className='input' id="email" placeholder='email' value={data.email} type="email" onChange={handle} />
+        <input className='input' id="password" placeholder='password' value={data.password} type="password" onChange={handle} />
       </div>
+      <button type='submit' onClick={showToastMessage}> Login</button>
+       
+    </form>
+    <div className="form-section">
+      <p>Dont have an account? <NavLink to="/Signup">Sign up</NavLink></p>
+    </div></div>
     </div>
   );
 };

@@ -50,7 +50,7 @@ const Signup = () => {
     };
 
     return (
-        <div className='form-box'>
+        <div className='formbx'>
             <form onSubmit={hsubmit} className='form'>
                 <span className="title">Sign up</span>
                 <span className="subtitle">Create an account with your email.</span>

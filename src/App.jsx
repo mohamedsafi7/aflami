@@ -44,6 +44,7 @@ const App = () => {
         <Route path="/Watchlist" element={<Watchlist watchlist={watchlist} removeFromWatchlist={removeFromWatchlist} />}/>
         <Route path="/" element={<Signup />} />
         <Route path="/Signin" element={<Signin />} />
+        <Route path="/Signup" element={<Signup />} />
         <Route path="/Home/New" element={<New />} />
 
       </Routes>
