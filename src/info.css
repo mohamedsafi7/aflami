@@ -4,8 +4,10 @@
     
     .cardetails {
       display: flex;
-      height: 60vh; 
+      flex-wrap: wrap;
+      height: 80vh; 
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30);
+      margin-top:150px;
     }
     
     .cardetails .cardimage img{
@@ -13,14 +15,18 @@
       height: 63vh;
       margin-left: 15px;
     }
-    
+    .recomcard{
+      display: inline-flex;
+    }
     .cardcontent {
-      width: 150vh; /*size of card detail*/
-      height: 60vh;
+      width: 129vh; /*size of card detail*/
+      height: 74vh;
       background: #FFF;
       padding: 1rem;
     }
-    
+    .reccommend{
+      border:5px solid rgb(0, 85, 128);
+    }
     .cardtitle {
       margin-top: 2rem;
       font-size: 2.5rem;

@@ -36,10 +36,9 @@ const Signin = () => {
     })
       .then(res => {
         // Check if login is correct
-        if (res.data.email==data.email && res.data.password==data.password ) {
-          // If login is successful, manually navigate to home
+      
           window.location.href = '/Home'; 
-        } 
+        
       })
       .catch(error => {
         console.error('Error during signin:', error);

@@ -3,16 +3,18 @@ import { useParams } from 'react-router-dom';
 import Header from './Header.jsx';
 import './info.css';
 import { Rating } from 'react-simple-star-rating';
+import Footer from './Footer.jsx'
 
 const MovieDetails = ({ addToWatchlist }) => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [rating, setRating] = useState(0);
-  const [recommandations,setRecommandations] = useState([]);
+  const [recommandations, setRecommandations] = useState([]);
+  const [recommendedgenre, setRecommendedgenre] = useState([]);
   const [buttonText, setButtonText] = useState('Add to Watchlist');
 
-  const api_movies= "http://localhost:3001/movies";
-  const api_tvshow= "http://localhost:3001/tvShow";
+  const apiMovies = "http://localhost:3001/movies";
+  const apiTvShow = "http://localhost:3001/tvShow";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +38,6 @@ const MovieDetails = ({ addToWatchlist }) => {
       } catch (error) {
         console.error('Error fetching details:', error);
       }
-
     };
     
     
@@ -44,18 +45,46 @@ const MovieDetails = ({ addToWatchlist }) => {
     fetchData();
   }, [id]);
 
-  useEffect(()=>{
-    const data= async()=>{
-      const movieResult= await fetch(api_movies);
-      const tvshowResult= await fetch(api_tvshow);
+  useEffect(() => {
+    const data = async () => {
+      try {
+        const movieResult = await fetch(apiMovies);
+        const tvShowResult = await fetch(apiTvShow);
 
-      const movierecommend = await movieResult.json();
-      const tvshowrecommend = await tvshowResult.json();
+        const movieRecommendations = await movieResult.json();
+        const tvShowRecommendations = await tvShowResult.json();
 
-      setRecommandations([...movierecommend,...tvshowrecommend])
+        setRecommandations([...movieRecommendations, ...tvShowRecommendations]);
+      } catch (error) {
+        console.error('Error fetching recommendations:', error);
+      }
     };
+
     data();
-  },[]);
+  }, []);
+
+  useEffect(() => {
+    const fetchGenre = async () => {
+      try {
+        const genreResponse = await fetch(
+          movieDetails.type === "movie"
+            ? `${apiMovies}?genre=${movieDetails.genre}`
+            : `${apiTvShow}?genre=${movieDetails.genre}`
+        );
+
+        if (genreResponse.ok) {
+          const genreData = await genreResponse.json();
+          setRecommendedgenre(genreData);
+        }
+      } catch (error) {
+        console.error('Error fetching genre details:', error);
+      }
+    };
+
+    if (movieDetails) {
+      fetchGenre();
+    }
+  }, [movieDetails]);
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -101,21 +130,25 @@ const MovieDetails = ({ addToWatchlist }) => {
             </form>
             
           </div>
-          {data ?(
-          <div>
-            {Recommandations().map((i)=>(
+          <div className="reccommend">
+            {recommendedgenre && recommendedgenre.length > 0 ? (
               <div>
-              <img src={i.image} alt="" />
-              <h3></h3>
+                <h2>Recommendations with the Same Genre:</h2>
+                {recommendedgenre.map((item) => (
+                  <div className='recomcard' key={item.id}>
+                    <img src={item.image} alt={item.name} />
+                    <h3>{item.name}</h3>
+                  </div>
+                ))}
               </div>
-              
-            ))}
+            ) : (
+              <div>
+                <h2>No recommendations available for the same genre</h2>
+              </div>
+            )}
           </div>
-        ):(
-          <div><h1>aucun</h1></div>
-          )}
         </div>
-        
+
       ) : (
         <div className="spinner">
           <div></div>
@@ -126,7 +159,7 @@ const MovieDetails = ({ addToWatchlist }) => {
           <div></div>
         </div>
       )}
-      
+      <Footer/>
     </div>
   );
 };

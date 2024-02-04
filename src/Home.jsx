@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 import { NavLink } from 'react-router-dom';
 import './App.css'; 
 import Header from './Header.jsx';
-
+import Footer from './Footer.jsx'
 
 const API_URL = "http://localhost:3001/movies";
 const API_URL1 = "http://localhost:3001/tvShow";
@@ -42,6 +42,7 @@ const Home = () => {
   };
 
   return (
+    <>
     <div className="home">
     <Header setSearchTerm={setSearchTerm} />
 
@@ -152,7 +153,10 @@ const Home = () => {
           </div>
         </div>
       )}
+      
     </div>
+    <Footer/>
+    </>
   );
 };
 

@@ -2,6 +2,8 @@
 import React from 'react';
 import './Watchlist.css'; 
 import Header from './Header'; 
+import Footer from './Footer.jsx';
+
 
 const WatchlistMovie = ({ movie, removeFromWatchlist }) => (
   <tr className="border-b-2 border-gray-200">
@@ -18,6 +20,7 @@ const WatchlistMovie = ({ movie, removeFromWatchlist }) => (
 );
 
 const Watchlist = ({ watchlist, removeFromWatchlist }) => (
+  <>  
   <div className='mywatch'>
     <Header />
     <div className="overflow-x-auto">
@@ -35,7 +38,8 @@ const Watchlist = ({ watchlist, removeFromWatchlist }) => (
         </tbody>
       </table>
     </div>
-  </div>
+    
+  </div><Footer /></>
 );
 
 export default Watchlist;
