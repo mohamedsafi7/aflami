@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './center.css';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 import 'react-toastify/dist/ReactToastify.css';
 import Axios from 'axios';
 
@@ -24,26 +26,26 @@ const Signin = () => {
       [id]: value
     }));
   };
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    Axios.get(url, {
-      params: {
-        email: data.email,
-        password: data.password
-      }
-    })
+  
+    Axios.get(url)
       .then(res => {
-        // Check if login is correct
-      
-          window.location.href = '/Home'; 
+        const users = res.data && res.data.users ? res.data.users : [];
         
+        const user = users.find(u => u.email === data.email && u.password === data.password);
+
+        if (user) {
+          // Valid user information, navigate to home page
+          useNavigate('/Home');
+        } 
       })
       .catch(error => {
         console.error('Error during signin:', error);
       });
   };
+  
 
   return (
     <div className='form-box'>

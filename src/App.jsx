@@ -6,9 +6,13 @@ import MovieDetails from './MovieDetails.jsx'; // Import the MovieDetails compon
 import Signup from './Signup.jsx';
 import Signin from './Signin.jsx';
 import Watchlist from './Watchlist';
+import About from './About';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import New from './New.jsx';
+import { Provider } from 'react-redux';
+import store from './Store';
+
 const App = () => {
   const [watchlist, setWatchlist] = useState([]);
 
@@ -37,6 +41,7 @@ const App = () => {
   };
 
   return (
+    <Provider store={store}>  
     <Router>
       <Routes>
         <Route path="/Home" element={<Home addToWatchlist={addToWatchlist} />}/>
@@ -45,10 +50,11 @@ const App = () => {
         <Route path="/" element={<Signup />} />
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Signup" element={<Signup />} />
+        <Route path="/About" element={<About />} />
         <Route path="/Home/New" element={<New />} />
 
       </Routes>
-    </Router>
+    </Router></Provider>
   );
 };
 

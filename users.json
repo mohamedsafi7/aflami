@@ -18,10 +18,16 @@
       "password": "qazx"
     },
     {
-      "id": "4ed1",
-      "name": "",
-      "email": "",
-      "password": ""
+      "id": "0f0b",
+      "name": "twitter",
+      "email": "twitter@gmail.com",
+      "password": "twitter"
+    },
+    {
+      "id": "8124",
+      "name": "new",
+      "email": "react@gmail.com",
+      "password": "2322"
     }
   ]
 }

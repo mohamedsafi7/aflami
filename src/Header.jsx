@@ -27,6 +27,7 @@ const Header = ({ setSearchTerm }) => {
             <h2 className="nw"> New </h2>
           </NavLink>
           <NavLink to="/Watchlist"><h2 className="watchl">  Watchlist </h2></NavLink>
+          <NavLink to="/About"><h2 className="watchl">  About Us </h2></NavLink>
           <div className="search">
             <input value={searchInput} onChange={handleSearch} placeholder="Search for movies"/>
 

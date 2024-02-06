@@ -38,8 +38,10 @@ const Watchlist = ({ watchlist, removeFromWatchlist }) => (
         </tbody>
       </table>
     </div>
-    
-  </div><Footer /></>
+  </div>
+  <Footer />
+   
+  </>
 );
 
 export default Watchlist;

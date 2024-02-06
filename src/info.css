@@ -1,4 +1,6 @@
-
+* {
+  font-family: Nunito, sans-serif;
+}
   
   
     
@@ -7,9 +9,20 @@
       flex-wrap: wrap;
       height: 80vh; 
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30);
-      margin-top:150px;
+      margin-top:50px;
     }
-    
+    .path{
+      display: flex;
+    }
+    .path img{
+      margin-top: 90px;
+      width: 5%;
+    }
+    .path h2{
+      margin-top: 90px;
+      margin-left: -482px;
+      color: black;
+    }
     .cardetails .cardimage img{
       width: 60vh; /*size of card detail*/
       height: 63vh;

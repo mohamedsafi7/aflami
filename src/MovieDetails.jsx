@@ -1,17 +1,27 @@
+// MovieDetails.jsx
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Header from './Header.jsx';
 import './info.css';
 import { Rating } from 'react-simple-star-rating';
-import Footer from './Footer.jsx'
+import Footer from './Footer.jsx';
 
 const MovieDetails = ({ addToWatchlist }) => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
-  const [rating, setRating] = useState(0);
   const [recommandations, setRecommandations] = useState([]);
   const [recommendedgenre, setRecommendedgenre] = useState([]);
   const [buttonText, setButtonText] = useState('Add to Watchlist');
+
+  // Add these lines to get the rating from Redux
+  const dispatch = useDispatch();
+  const rating = useSelector((state) => state.movieRating);
+  const handleRating = (rate) => {
+    // Dispatch the action to update the rating in Redux
+    dispatch({ type: 'SET_MOVIE_RATING', payload: rate });
+  };
 
   const apiMovies = "http://localhost:3001/movies";
   const apiTvShow = "http://localhost:3001/tvShow";
@@ -20,14 +30,14 @@ const MovieDetails = ({ addToWatchlist }) => {
     const fetchData = async () => {
       try {
         const movieResponse = await fetch(`http://localhost:3001/movies/${id}`);
-    
+
         if (movieResponse.ok) {
           const movieData = await movieResponse.json();
           setMovieDetails(movieData);
         } else {
-          // If movie is not found, try fetching TV show details
+          // If the movie is not found, try fetching TV show details
           const tvShowResponse = await fetch(`http://localhost:3001/tvShow/${id}`);
-    
+
           if (tvShowResponse.ok) {
             const tvShowData = await tvShowResponse.json();
             setMovieDetails(tvShowData);
@@ -39,8 +49,6 @@ const MovieDetails = ({ addToWatchlist }) => {
         console.error('Error fetching details:', error);
       }
     };
-    
-    
 
     fetchData();
   }, [id]);
@@ -86,9 +94,7 @@ const MovieDetails = ({ addToWatchlist }) => {
     }
   }, [movieDetails]);
 
-  const handleRating = (rate) => {
-    setRating(rate);
-  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -103,10 +109,17 @@ const MovieDetails = ({ addToWatchlist }) => {
   return (
     <div className="apx">
       <Header />
+      
       {movieDetails ? (
+        <div>
+        
+        <div className='path'><NavLink to="/Home"><img src="./../pics/home.png" alt="" /></NavLink>
+        <h2>/MovieDetails</h2>
+        </div>
         <div className='cardetails'>
+        
           <div className='cardimage'>
-          <div dangerouslySetInnerHTML={{ __html: movieDetails.trailer }} />
+            <div dangerouslySetInnerHTML={{ __html: movieDetails.trailer }} />
           </div>
           <div className='cardcontent'>
             <p className='cardtitle'>{movieDetails.name}</p>
@@ -128,7 +141,6 @@ const MovieDetails = ({ addToWatchlist }) => {
                 {buttonText}
               </button>
             </form>
-            
           </div>
           <div className="reccommend">
             {recommendedgenre && recommendedgenre.length > 0 ? (
@@ -136,8 +148,7 @@ const MovieDetails = ({ addToWatchlist }) => {
                 <h2>Recommendations with the Same Genre:</h2>
                 {recommendedgenre.map((item) => (
                   <div className='recomcard' key={item.id}>
-                    <img src={item.image} alt={item.name} />
-                    <h3>{item.name}</h3>
+                    <h3>  ||{item.name}||  </h3>
                   </div>
                 ))}
               </div>
@@ -147,8 +158,7 @@ const MovieDetails = ({ addToWatchlist }) => {
               </div>
             )}
           </div>
-        </div>
-
+        </div></div>
       ) : (
         <div className="spinner">
           <div></div>
@@ -159,7 +169,7 @@ const MovieDetails = ({ addToWatchlist }) => {
           <div></div>
         </div>
       )}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
