@@ -8,7 +8,7 @@ const MovieCard = ({ id, image, name , genre}) => {
       <div>
         <p>{genre}</p>
       </div>
-      <Link to={`/MovieDetails/${id}`}>
+      <Link to={`/Home/MovieDetails/${id}`}>
       <div>
           <img src={`../${image}`} alt={name} />
 
@@ -19,7 +19,7 @@ const MovieCard = ({ id, image, name , genre}) => {
 
         {/* Pass the id as a parameter when navigating to MovieDetails */}
         
-        <Link to={`/MovieDetails/${id}`}>
+        <Link to={`/Home/MovieDetails/${id}`}>
           <button className="btn">View Details</button>
         </Link>
       </div>

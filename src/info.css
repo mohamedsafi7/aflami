@@ -38,7 +38,27 @@
       padding: 1rem;
     }
     .reccommend{
-      border:5px solid rgb(0, 85, 128);
+      border-radius: 30px 100px / 120px rgb(0, 85, 128);
+      color: #6019e4;
+      border:3px ;
+      width: 100%;
+      background: #2980B9;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #FFFFFF, #6DD5FA, #96d5ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
+
+
+    }
+    .recomcard{
+      border-radius: 10px 100px / 120px rgb(11, 182, 255);
+    
+      margin:46px;
+      flex-direction: column;
+      text-align: center;
+
+    }
+    .recomcard h4{
+      color: #7c7c7c;
     }
     .cardtitle {
       margin-top: 2rem;

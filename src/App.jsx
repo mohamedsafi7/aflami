@@ -45,12 +45,12 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/Home" element={<Home addToWatchlist={addToWatchlist} />}/>
-        <Route path="/MovieDetails/:id"  element={<MovieDetails addToWatchlist={addToWatchlist} />} />
-        <Route path="/Watchlist" element={<Watchlist watchlist={watchlist} removeFromWatchlist={removeFromWatchlist} />}/>
+        <Route path="/Home/MovieDetails/:id"  element={<MovieDetails addToWatchlist={addToWatchlist} />} />
+        <Route path="/Home/Watchlist" element={<Watchlist watchlist={watchlist} removeFromWatchlist={removeFromWatchlist} />}/>
         <Route path="/" element={<Signup />} />
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Signup" element={<Signup />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/Home/About" element={<About />} />
         <Route path="/Home/New" element={<New />} />
 
       </Routes>

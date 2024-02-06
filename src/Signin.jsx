@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Axios from 'axios';
 
 const Signin = () => {
+  const navigate = useNavigate();
   const url = "http://localhost:3002/users";
   const [data, setData] = useState({
     email: "",
@@ -26,20 +27,23 @@ const Signin = () => {
       [id]: value
     }));
   };
-  const navigate = useNavigate();
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
   
     Axios.get(url)
       .then(res => {
-        const users = res.data && res.data.users ? res.data.users : [];
-        
+        const users = res.data && res.data ? res.data : [];
+       
         const user = users.find(u => u.email === data.email && u.password === data.password);
-
+        
         if (user) {
+        
           // Valid user information, navigate to home page
-          useNavigate('/Home');
-        } 
+          navigate('/Home');
+        } else{
+          showToastMessage()
+        }
       })
       .catch(error => {
         console.error('Error during signin:', error);
@@ -60,7 +64,7 @@ const Signin = () => {
         <input className='input' id="email" placeholder='email' value={data.email} type="email" onChange={handle} />
         <input className='input' id="password" placeholder='password' value={data.password} type="password" onChange={handle} />
       </div>
-      <button type='submit' onClick={showToastMessage}> Login</button>
+      <button type='submit' > Login</button>
        
     </form>
     <div className="form-section">

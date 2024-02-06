@@ -147,8 +147,11 @@ const MovieDetails = ({ addToWatchlist }) => {
               <div>
                 <h2>Recommendations with the Same Genre:</h2>
                 {recommendedgenre.map((item) => (
+                  
                   <div className='recomcard' key={item.id}>
-                    <h3>  ||{item.name}||  </h3>
+
+                    <h3>  {item.name}  </h3>
+                  <h4>  {item.genre}  </h4>
                   </div>
                 ))}
               </div>
