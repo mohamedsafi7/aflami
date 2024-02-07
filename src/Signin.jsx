@@ -1,4 +1,4 @@
-import log from './../pics/log.webp';
+
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './center.css';
@@ -54,7 +54,7 @@ const Signin = () => {
   return (
     <div className='form-box'>
     <div className='bg'>
-    <img src={log} alt="" />
+    <img src="./pics/log.webp" alt="" />
     </div>
     <div className='frm'>
     <form onSubmit={handleSubmit} className='form'>

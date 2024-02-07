@@ -173,6 +173,24 @@
       "type": "",
       "image": "",
       "trailer": "<iframe src=\"https://www.youtube.com/embed/uYPbbksJxIg?start=27&autoplay=1&mute=1\" width=\"500\" height=\"558\" title=\"A YouTube video\" frameborder=\"0\" allowfullscreen></iframe>"
+    },
+    {
+      "id": "5be6",
+      "name": "thor",
+      "genre": "Sci-Fi",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "type": "movie",
+      "image": "",
+      "trailer": "<iframe src=\"https://www.youtube.com/embed/dKi5XoeTN0k?start=27&autoplay=1\" width=\"500\" height=\"558\" title=\"A YouTube video\" frameborder=\"0\" allowfullscreen></iframe>"
+    },
+    {
+      "id": "ad67",
+      "name": "life itself",
+      "genre": "Action",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "type": "movie",
+      "image": "",
+      "trailer": "<iframe src=\"https://www.youtube.com/embed/dKi5XoeTN0k?start=27&autoplay=1\" width=\"500\" height=\"558\" title=\"A YouTube video\" frameborder=\"0\" allowfullscreen></iframe>"
     }
   ],
   "tvShow": [
@@ -222,6 +240,7 @@
       "genre": "Drama",
       "description": "It broadly follows the exploits of the legendary Viking chieftain Ragnar Lothbrok and his crew, family and descendants, as notably laid down in the 13th-century sagas Ragnars saga Loðbrókar and Ragnarssona þáttr, as well as in Saxo Grammaticus' 12th-century work Gesta Danorum.",
       "image": "pics/vikings.jpg",
+      "trailer": "<iframe src=\"https://www.youtube.com/embed/9GgxinPwAGc?autoplay=1&mute=1\" width=\"500\" height=\"558\" title=\"The Vikings\" frameborder=\"0\" allowfullscreen></iframe>  ",
       "type": "tvShow"
     },
     {
